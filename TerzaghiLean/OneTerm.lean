@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # One term of Terzaghi's 1D consolidation solution
 
-Rung 2 of the plan: show that a single separated term satisfies the
+Step 1 of the plan (see README): show that a single separated term satisfies the
 consolidation equation and both boundary conditions.
 
 Everything is in non-dimensional form, so no units appear:

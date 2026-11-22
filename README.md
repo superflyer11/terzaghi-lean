@@ -100,17 +100,17 @@ Deriving the equation from items 1 to 8 (continuity + Darcy + effective stress
 
 | Step | Statement | Status | Where |
 |---|---|---|---|
-| 1 | Learn Lean basics (*Mathematics in Lean*) | in progress | — |
-| 2a | One term satisfies `∂u/∂T = ∂²u/∂Z²` | proved | `consolidation_equation` |
-| 2b | One term has zero slope at the impermeable base | proved | `base_impermeable` |
-| 2c | One term is zero at the drained top | open: first exercise | `top_drained` |
-| 3 | Any finite sum of terms satisfies the equation and both boundaries (superposition) | not started | — |
-| 4 | The full infinite series converges and can be differentiated term by term | not started; the hard part | — |
-| 5 | Uniqueness of the solution; average degree of consolidation U(Tv) | not started | — |
+| 0 | Learn Lean basics (*Mathematics in Lean*) | — | — |
+| 1a | One term satisfies `∂u/∂T = ∂²u/∂Z²` | proved | `consolidation_equation` |
+| 1b | One term has zero slope at the impermeable base | proved | `base_impermeable` |
+| 1c | One term is zero at the drained top | open: first exercise | `top_drained` |
+| 2 | Any finite sum of terms satisfies the equation and both boundaries (superposition) | not started | — |
+| 3 | The full infinite series converges and can be differentiated term by term | not started; the hard part | — |
+| 4 | Uniqueness of the solution; average degree of consolidation U(Tv) | not started | — |
 | — | Derive the equation from assumptions 1 to 8 | possible later step | — |
 
 All proofs are in [TerzaghiLean/OneTerm.lean](TerzaghiLean/OneTerm.lean).
-Step 2b is the only place the value of M matters. It needs
+Step 1b is the only place the value of M matters. It needs
 cos M = 0, which holds exactly when M = (2k + 1)π/2.
 
 ## Building
@@ -122,9 +122,6 @@ Mathlib in `lakefile.toml`.
 lake exe cache get   # download Mathlib's prebuilt files (about 5 GB)
 lake build
 ```
-
-To work on proofs interactively, open the folder in VS Code with the
-"Lean 4" extension. The Lean Infoview panel shows the goal at the cursor.
 
 ## References
 
@@ -141,9 +138,7 @@ To work on proofs interactively, open the folder in VS Code with the
 
 ## AI use
 
-Proofs are written with help from Claude (Anthropic). Every proof is checked by
-Lean's kernel. A proof that Lean accepts is correct whoever wrote it, but the
-statements themselves need a human to confirm they say what is intended.
+Proofs are written with help from a LLM. The intended outcome is that a human should be able to digest this.
 
 ## Licence
 
