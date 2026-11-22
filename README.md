@@ -10,17 +10,22 @@ Started 22 November 2026 as a learning project.
 
 ### 1. To separate the mathematics from the assumptions
 
-Terzaghi's theory has two parts: **assumptions about soil** (listed below),
-which are engineering judgements and where real predictions go wrong, and
-**mathematics**, which follows from those assumptions by pure reasoning and has
-been settled since 1925.
+Every textbook derivation of Terzaghi's theory mixes two kinds of step:
 
-In real engineering practice, the two parts are almost always mixed up, so it
-is hard to see which step is a physical assumption and which is just algebra.
-Lean draws the line exactly by checking everything that can be accepted.
-Anything Lean cannot check must be written down as an explicit assumption. At
-the end, the list of assumptions *is* the theory's engineering content, stated
-in full.
+- **Physical assumptions**, which may or may not hold on site, such as
+  constant cv, a fully saturated layer, or a load that doesn't change.
+- **Mathematical steps**, which are always true once the assumptions are made.
+
+On the page the two look the same. For example, the derivation writes
+Δσ′ = −Δu as if it were algebra, but it is only true because the load is
+assumed constant. The opposite also happens: "the series can be
+differentiated term by term" sounds like an assumption, but it is a
+provable fact.
+
+What Lean does is formulate a mathematical step only with a proof, and
+anything it can't prove has to be stated openly as an assumption. The result
+is a complete list of what Terzaghi's theory assumes about soil. That list is
+what an engineer has to check against the site.
 
 ### 2. A first step towards rigorous soil mechanics
 
