@@ -20,24 +20,13 @@ Terzaghi's consolidation theory has two quite different parts:
   series solution follow by pure reasoning. This part has been settled since
   1925. It is never the reason a settlement prediction is wrong.
 
-A textbook mixes the two, so it is hard to see which step is a physical
-assumption and which is just algebra. Lean draws the line exactly. Lean checks
-everything it accepts, and anything it cannot check must be written down as an
+In real engineering practice, the two parts are almost always mixed up, so it is hard to see which step is a physical assumption and which is just algebra. Lean draws the line exactly by checking everything that can be accepted. Anything Lean cannot check must be written down as an
 explicit assumption. At the end, the list of assumptions *is* the theory's
 engineering content, stated in full.
 
-This project does not make the theory more accurate for real clay. It makes
-plain which parts can be trusted completely and which parts need engineering
-judgement.
+This project aims to pave to a more rigorous understanding of soil mechanics.
 
-### 2. To understand every step
-
-A textbook says "it can be shown that" and "differentiating term by term".
-Lean accepts neither, and makes you prove each step. Writing the proof
-yourself means you know why each condition, eigenvalue and series term is
-there, not just that it is.
-
-### 3. It does not seem to have been done
+### 2. It does not seem to have been done
 
 A Google search in November 2026 found no formalisation of Terzaghi's
 consolidation theory in Lean or any other proof assistant. Terzaghi's equation
@@ -48,7 +37,7 @@ Lean's main maths library, Mathlib (see [References](#references)).
 Terzaghi's specific case, a finite layer drained at one boundary and sealed at
 the other, solved as a Fourier sine series, was not found anywhere.
 
-### 4. A first step towards rigorous soil mechanics
+### 3. A first step towards rigorous soil mechanics
 
 Terzaghi's theory is the one-dimensional special case of Biot's
 poroelasticity. Darcy's law and effective stress can themselves be derived
